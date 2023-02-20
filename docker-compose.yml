@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: "movacal-mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ROOT_USER: root
+      MYSQL_DATABASE: movacal
+      MYSQL_USER: movacal
+      MYSQL_PASSWORD: movacal
+      TZ: "Asia/Bangkok"
+    volumes:
+      - .data/mysql:/var/lib/mysql/
+
