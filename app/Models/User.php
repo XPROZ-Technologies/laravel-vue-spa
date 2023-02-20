@@ -12,6 +12,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const ROLES = [
+        'SUPER_ADMIN' => 'SUPER_ADMIN',
+        'ADMIN' => 'ADMIN',
+        'USER' => 'USER',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +27,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'hospital_id',
     ];
 
     /**

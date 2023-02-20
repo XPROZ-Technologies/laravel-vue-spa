@@ -5,6 +5,7 @@ import store from '@/store'
 const Login = () => import('@/components/Login.vue')
 const Register = () => import('@/components/Register.vue')
 /* Guest Component */
+const SuperAdmin = () => import('@/components/SuperAdmin.vue')
 
 /* Layouts */
 const DahboardLayout = () => import('@/components/layouts/Default.vue')
@@ -50,6 +51,15 @@ const routes = [
                 }
             }
         ]
+    },
+    {
+        name: 'superadmin',
+        path: '/admin',
+        component: DahboardLayout,
+        meta: {
+            middleware: "auth",
+        },
+        // children:
     }
 ]
 
